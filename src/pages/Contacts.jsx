@@ -14,7 +14,6 @@ const Contacts = React.memo(() => {
   const [contacts, setContacts] = useState([]);
   const [contactDetails, setContactDetails] = useState({});
   const [isOpen, setIsOpen] = useState(false);
-  // const [isEditOpen, setIsEditOpen] = useState(false);
 
   const { accessToken } = useAuth();
 
@@ -114,10 +113,9 @@ const Contacts = React.memo(() => {
     setIsOpen(false);
   };
 
-
   return (
     <div className=" w-full h-full md:grid md:grid-cols-7 ">
-      <nav className=" md:col-span-3 h-1/2 md:p-6 pt-2">
+      <nav className=" md:col-span-2 h-1/2 overflow-y-scroll md:h-full md:p-6 pt-2">
         <div className=" flex justify-between pb-6">
           <div className=" flex gap-2 px-2 py-1">
             <p className="text-green-500">Welcome,</p>
@@ -126,9 +124,11 @@ const Contacts = React.memo(() => {
           <Logout />
         </div>
 
-        <div className=" h-full overflow-y-visible">
-          <p className=" text-yellow-300 font-bold text-lg pb-2 md:pb-0">My Contacts</p>
-          <div>
+        <div className=" h-fit relative">
+          <p className=" text-yellow-300 font-bold text-lg pb-2 md:pb-0">
+            My Contacts
+          </p>
+          <div className="">
             {contacts.map((contact) => {
               return (
                 <div
@@ -143,10 +143,8 @@ const Contacts = React.memo(() => {
                   </p>
 
                   <div className=" flex gap-3">
-                    <Link to={contact._id} >
-                      <FaEdit
-                        className=" hover:scale-105 cursor-pointer"
-                      />
+                    <Link to={contact._id}>
+                      <FaEdit className=" hover:scale-105 cursor-pointer" />
                     </Link>
                     <FaRegTrashAlt
                       onClick={() => handleDelContact(contact._id)}
@@ -159,7 +157,7 @@ const Contacts = React.memo(() => {
           </div>
         </div>
       </nav>
-      <form className=" bg-green-200 h-full col-span-4 ">
+      <form className=" bg-green-200 h-full col-span-5">
         <div className=" w-full h-full border ">
           <div className=" w-full md:h-1/2 flex flex-col justify-center items-center">
             {!isOpen && (
@@ -175,6 +173,7 @@ const Contacts = React.memo(() => {
           </div>
         </div>
       </form>
+      
     </div>
   );
 });

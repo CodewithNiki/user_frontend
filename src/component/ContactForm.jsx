@@ -53,7 +53,7 @@ const ContactForm = ({ contacts, setContacts,  }) => {
 
   return (
 
-    <div className=" w-full flex justify-center items-center flex-col py-3 md:pt-8">
+    <div className=" w-full flex justify-center items-center flex-col py-3 md:pt-8 ">
       <div className=" text-xl text-slate-700">Create contact</div>
 
       <div className=" flex flex-col gap-6 py-4 md:w-1/2 w-5/6">
