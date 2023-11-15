@@ -2,8 +2,8 @@
 
 const DetailForm = ({ setIsOpen, contactDetails }) => {
   return (
-    <>
-      <div className=" text-2xl">
+    <div className=" pt-3 md:pt-0">
+      <div className=" md:text-2xl">
         <p className=" capitalize text-slate-700">
           Contact details
         </p>
@@ -25,7 +25,7 @@ const DetailForm = ({ setIsOpen, contactDetails }) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
