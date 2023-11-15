@@ -82,6 +82,7 @@ const EditContact = () => {
       )
       .then((response) => {
         console.log(response);
+        navigate("/contacts")
       })
       .catch((error) => {
         console.log(error);
@@ -93,13 +94,13 @@ const EditContact = () => {
   };
 
   return (
-    <div className=" w-1/2 flex flex-col justify-center items-center ">
+    <div className=" w-full flex flex-col justify-center items-center ">
       <div className="text-yellow-300 font-bold text-xl">Edit contact</div>
-      <p className=" text-left w-1/2 text-green-500 font-thin text-lg pt-4 ">
+      <p className=" text-left w-1/2 md:w-1/3 text-green-500 font-thin text-lg pt-4 ">
         <span className=" capitalize">Hello {username}</span>, what will you
         like to change?
       </p>
-      <div className="flex flex-col gap-6 pb-4 w-1/2">
+      <div className="flex flex-col gap-6 pb-4 w-5/6 md:w-1/3">
         <input
           type="text"
           name="firstName"

@@ -53,10 +53,10 @@ const ContactForm = ({ contacts, setContacts,  }) => {
 
   return (
 
-    <>
-      <div className=" text-xl text-slate-700 md:pt-8 pt-3">Create contact</div>
+    <div className=" w-full flex justify-center items-center flex-col py-3 md:pt-8">
+      <div className=" text-xl text-slate-700">Create contact</div>
 
-      <div className=" flex flex-col gap-6 py-4 w-1/2">
+      <div className=" flex flex-col gap-6 py-4 md:w-1/2 w-5/6">
         <input
           type="text"
           name="firstName"
@@ -97,7 +97,7 @@ const ContactForm = ({ contacts, setContacts,  }) => {
         Add
       </button>
       {error && <div className="text-red-500 text-center">{error}</div>}
-    </>
+    </div>
   );
 };
 

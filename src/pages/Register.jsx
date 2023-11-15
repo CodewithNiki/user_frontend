@@ -10,6 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate()
 
@@ -20,6 +21,7 @@ const Register = () => {
     const registrationData = { username, email, password };
 
     try {
+      setLoading(true)
       const response = await axios.post("https://user-fgrs.onrender.com/api/users/register", registrationData);
       console.log("User registered:", response.data);
       setError(null);
@@ -75,7 +77,7 @@ const Register = () => {
       {error && <div className="text-red-500 text-center">{error}</div>}
       <div className=" text-cyan-400 text-right my-6"></div>
       <button className=" border-2 border-cyan-400 py-2 w-full cursor-pointer hover:bg-cyan-400 hover:text-gray-800">
-        Register
+        {loading ? "Loading.." : "Register"}
       </button>
     </form>
   );

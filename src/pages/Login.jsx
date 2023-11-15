@@ -5,9 +5,19 @@ import { Link } from "react-router-dom";
 import useAuth from "../hook/useAuth";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
-  const { setAccessToken, email, password, error, setError, setEmail, setPassword } = useAuth();
+  const {
+    setAccessToken,
+    email,
+    password,
+    error,
+    setError,
+    setEmail,
+    setPassword,
+  } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -18,6 +28,7 @@ const Login = () => {
       password,
     };
     try {
+      setLoading(true);
       const response = await axios.post(
         "https://user-fgrs.onrender.com/api/users/login",
         loginData
@@ -69,9 +80,15 @@ const Login = () => {
         </Link>
       </div>
       {error && <div className="text-red-500 text-center">{error}</div>}
-      <button className=" border-2 border-cyan-400 py-2 w-full cursor-pointer hover:bg-cyan-400 hover:text-gray-800">
-        Login
-      </button>
+      {loading ? (
+        <button className=" border-2 border-cyan-400 py-2 w-full cursor-pointer hover:bg-cyan-400 hover:text-gray-800">
+          Loading..
+        </button>
+      ) : (
+        <button className=" border-2 border-cyan-400 py-2 w-full cursor-pointer hover:bg-cyan-400 hover:text-gray-800">
+          Login
+        </button>
+      )}
     </form>
   );
 };

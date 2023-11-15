@@ -126,8 +126,8 @@ const Contacts = React.memo(() => {
           <Logout />
         </div>
 
-        <div>
-          <p className=" text-yellow-300 font-bold text-lg">My Contacts</p>
+        <div className=" h-full overflow-y-visible">
+          <p className=" text-yellow-300 font-bold text-lg pb-2 md:pb-0">My Contacts</p>
           <div>
             {contacts.map((contact) => {
               return (
@@ -159,9 +159,9 @@ const Contacts = React.memo(() => {
           </div>
         </div>
       </nav>
-      <form className=" bg-green-200 col-span-4 ">
+      <form className=" bg-green-200 h-full col-span-4 ">
         <div className=" w-full h-full border ">
-          <div className=" w-full h-1/2 flex flex-col justify-center items-center">
+          <div className=" w-full md:h-1/2 flex flex-col justify-center items-center">
             {!isOpen && (
               <ContactForm contacts={contacts} setContacts={setContacts} />
             )}
