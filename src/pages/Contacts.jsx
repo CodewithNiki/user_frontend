@@ -116,8 +116,8 @@ const Contacts = React.memo(() => {
 
 
   return (
-    <div className=" w-full h-full grid grid-cols-7 ">
-      <nav className=" col-span-2 p-6">
+    <div className=" w-full h-full md:grid md:grid-cols-7 ">
+      <nav className=" md:col-span-3 h-1/2 md:p-6 pt-2">
         <div className=" flex justify-between pb-6">
           <div className=" flex gap-2 px-2 py-1">
             <p className="text-green-500">Welcome,</p>
@@ -159,7 +159,7 @@ const Contacts = React.memo(() => {
           </div>
         </div>
       </nav>
-      <form className=" bg-green-200 col-span-5 ">
+      <form className=" bg-green-200 col-span-4 ">
         <div className=" w-full h-full border ">
           <div className=" w-full h-1/2 flex flex-col justify-center items-center">
             {!isOpen && (
