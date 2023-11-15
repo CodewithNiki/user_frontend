@@ -40,6 +40,7 @@ const Login = () => {
         navigate("/contacts");
       }
     } catch (error) {
+      setLoading(false)
       setError(error.response.data.message);
       console.error("Error:", error.response.data.message);
     }

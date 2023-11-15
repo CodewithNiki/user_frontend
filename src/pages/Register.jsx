@@ -29,6 +29,7 @@ const Register = () => {
       // Optionally, handle success and redirect the user
     } catch (error) {
       console.error("Registration failed:", error);
+      setLoading(false)
       if (error.response && error.response.data && error.response.data.message) {
         setError(error.response.data.message);
       } else {
