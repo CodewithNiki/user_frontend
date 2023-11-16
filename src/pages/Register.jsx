@@ -34,6 +34,7 @@ const Register = () => {
         setError(error.response.data.message);
       } else {
         setError("An error occurred during registration.");
+        setLoading(false)
       }
     }
   };
