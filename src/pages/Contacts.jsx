@@ -99,11 +99,9 @@ const Contacts = React.memo(() => {
       .then(() => {
         const isConfirmed = window.confirm("Are you sure you want to delete this contact?");
         const updatedContacts = contacts.filter(
-          (contact) => {
-            {isConfirmed && contact._id !== id}
-          }
+          (contact) => contact._id !== id
         );
-        setContacts(updatedContacts);
+        {isConfirmed && (setContacts(updatedContacts))}
       })
 
       .catch((error) => {
